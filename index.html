@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cronzph POS — The Offline-First Point of Sale System</title>
+    <meta name="description"
+        content="The most powerful offline-first POS system. SQLite local storage + Firebase cloud sync. Works without internet. Multi-device. Role-based access. Built for real businesses." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+    <nav>
+        <a href="#" class="nav-brand">
+            <div class="nav-logo">🛒</div>
+            <span class="nav-name">cronzph <span>POS</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#how-it-works" class="nav-link">How It Works</a>
+            <a href="#cashier" class="nav-link">Cashier</a>
+            <a href="#roles" class="nav-link">Roles</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+        </div>
+        <a href="#cta" class="nav-cta">Get Started Free →</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+
+        <div class="hero-badge">
+            <span class="pdot"></span>
+            Production Ready · v2.0
+        </div>
+
+        <h1>
+            <span class="grad">The POS System</span><br>
+            <span class="accent">That Never Goes Down</span>
+        </h1>
+
+        <p class="hero-sub">
+            Offline-first Point of Sale with <strong>SQLite local storage</strong> and <strong>Firebase cloud
+                sync</strong>.
+            Process sales, manage inventory, and run your business — even without internet.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#cta" class="btn-p">
+                🚀 Start Free Today
+            </a>
+            <a href="#features" class="btn-s">
+                ✨ See All Features
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hs">
+                <div class="hs-num"><span>100%</span></div>
+                <div class="hs-lbl">Offline Capable</div>
+            </div>
+            <div class="hs">
+                <div class="hs-num"><span>0ms</span></div>
+                <div class="hs-lbl">Local Read Speed</div>
+            </div>
+            <div class="hs">
+                <div class="hs-num"><span>∞</span></div>
+                <div class="hs-lbl">Devices Supported</div>
+            </div>
+            <div class="hs">
+                <div class="hs-num"><span>4</span></div>
+                <div class="hs-lbl">Role Levels</div>
+            </div>
+        </div>
+
+        <!-- Dashboard Mockup -->
+        <div class="mockup-wrap">
+            <div class="mockup-glow"></div>
+            <div class="mockup-win">
+                <div class="mockup-bar">
+                    <span class="dot dr"></span>
+                    <span class="dot dy"></span>
+                    <span class="dot dg"></span>
+                    <span class="mockup-url">pos.yourbusiness.com/dashboard</span>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-sb">
+                        <div class="mock-logo">
+                            <div class="mock-logo-ic">🛒</div>
+                            <span class="mock-logo-txt">cronzph POS</span>
+                        </div>
+                        <div class="mock-nav on">📊 Dashboard</div>
+                        <div class="mock-nav">💳 Cashier</div>
+                        <div class="mock-nav">📦 Products</div>
+                        <div class="mock-nav">🧾 Transactions</div>
+                        <div class="mock-nav">⚙️ Settings</div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="mock-stats">
+                            <div class="mock-stat">
+                                <div class="ms-lbl">Today's Sales</div>
+                                <div class="ms-val">24</div>
+                                <div class="ms-sub">transactions</div>
+                            </div>
+                            <div class="mock-stat">
+                                <div class="ms-lbl">Today's Revenue</div>
+                                <div class="ms-val" style="color:#10d98a">₱8,450</div>
+                                <div class="ms-sub">total for today</div>
+                            </div>
+                            <div class="mock-stat">
+                                <div class="ms-lbl">Total Products</div>
+                                <div class="ms-val">142</div>
+                                <div class="ms-sub">3 low stock ⚠️</div>
+                            </div>
+                            <div class="mock-stat">
+                                <div class="ms-lbl">Total Revenue</div>
+                                <div class="ms-val" style="color:#7ab0ff">₱124K</div>
+                                <div class="ms-sub">all-time</div>
+                            </div>
+                        </div>
+                        <div
+                            style="font-size:9px;color:rgba(240,240,255,.28);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">
+                            Recent Transactions</div>
+                        <div class="mock-row">
+                            <span class="mr-name">💵 Burger Meal × 2, Fries × 1</span>
+                            <span class="mr-val" style="color:#10d98a">₱350.00</span>
+                        </div>
+                        <div class="mock-row">
+                            <span class="mr-name">📱 GCash · Milk Tea × 3</span>
+                            <span class="mr-val" style="color:#7ab0ff">₱270.00</span>
+                        </div>
+                        <div class="mock-row">
+                            <span class="mr-name">💵 Rice Meal × 1, Juice × 2</span>
+                            <span class="mr-val" style="color:#10d98a">₱185.00</span>
+                        </div>
+                        <div style="margin-top:10px;display:flex;gap:6px">
+                            <span class="mock-badge">🟢 Online — Firebase Synced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════════════════════ -->
+    <section id="features">
+        <div class="container">
+            <div class="tc">
+                <span class="sb sb-bl">✨ Core Features</span>
+                <h2 class="sec-title">Everything Your Business Needs</h2>
+                <p class="sec-sub">A complete Point of Sale solution built for reliability, speed, and real-world use —
+                    whether you have internet or not.</p>
+            </div>
+
+            <div class="feat-grid">
+
+                <!-- Offline First -->
+                <div class="feat-card fc-bl">
+                    <div class="feat-ic fi-bl">💾</div>
+                    <h3 class="feat-title">100% Offline Capable</h3>
+                    <p class="feat-desc">All data lives in a local SQLite database in your browser. Every read and write
+                        is instant — no network round-trips, no loading spinners.</p>
+                    <ul class="feat-list">
+                        <li>Works with zero internet connection</li>
+                        <li>Instant local reads — sub-millisecond</li>
+                        <li>No server dependency for daily operations</li>
+                        <li>Never lose a sale due to connectivity</li>
+                    </ul>
+                </div>
+
+                <!-- Firebase Sync -->
+                <div class="feat-card fc-gn">
+                    <div class="feat-ic fi-gn">🔥</div>
+                    <h3 class="feat-title">Firebase Cloud Sync</h3>
+                    <p class="feat-desc">When online, data automatically syncs to Firebase Firestore in the background.
+                        Your data is always backed up in the cloud.</p>
+                    <ul class="feat-list">
+                        <li>Auto background sync when online</li>
+                        <li>Manual Push / Pull controls</li>
+                        <li>Cross-device data sharing</li>
+                        <li>Real-time online status indicator</li>
+                    </ul>
+                </div>
+
+                <!-- Multi-Device -->
+                <div class="feat-card fc-pu">
+                    <div class="feat-ic fi-pu">📱</div>
+                    <h3 class="feat-title">Multi-Device Support</h3>
+                    <p class="feat-desc">Run the same POS on multiple devices simultaneously. New device? Log in and it
+                        automatically pulls all your data from Firebase.</p>
+                    <ul class="feat-list">
+                        <li>Unlimited devices on same account</li>
+                        <li>Auto-pull on first login to new device</li>
+                        <li>Sync products, transactions & settings</li>
+                        <li>Works on desktop, tablet, and mobile</li>
+                    </ul>
+                </div>
+
+                <!-- Smart Cashier -->
+                <div class="feat-card fc-am">
+                    <div class="feat-ic fi-am">💳</div>
+                    <h3 class="feat-title">Smart Cashier Interface</h3>
+                    <p class="feat-desc">A blazing-fast cashier screen with product grid, category filters, cart
+                        management, and multiple payment methods.</p>
+                    <ul class="feat-list">
+                        <li>Cash, GCash, and Card payments</li>
+                        <li>Quick-add bill denomination buttons</li>
+                        <li>Auto change calculation</li>
+                        <li>Printable receipt generation</li>
+                    </ul>
+                </div>
+
+                <!-- Inventory -->
+                <div class="feat-card fc-cy">
+                    <div class="feat-ic fi-cy">📦</div>
+                    <h3 class="feat-title">Inventory Management</h3>
+                    <p class="feat-desc">Full product management with categories, stock tracking, low-stock alerts, and
+                        emoji icons for quick visual identification.</p>
+                    <ul class="feat-list">
+                        <li>Add, edit, delete products</li>
+                        <li>Stock level tracking per product</li>
+                        <li>Low stock threshold alerts</li>
+                        <li>Category organization system</li>
+                    </ul>
+                </div>
+
+                <!-- Analytics -->
+                <div class="feat-card fc-pk">
+                    <div class="feat-ic fi-pk">📊</div>
+                    <h3 class="feat-title">Dashboard & Analytics</h3>
+                    <p class="feat-desc">Real-time dashboard showing today's sales, revenue, top-selling products, and
+                        recent transactions at a glance.</p>
+                    <ul class="feat-list">
+                        <li>Today's sales count & revenue</li>
+                        <li>All-time revenue tracking</li>
+                        <li>Top 5 best-selling products</li>
+                        <li>Recent transactions feed</li>
+                    </ul>
+                </div>
+
+                <!-- User Roles -->
+                <div class="feat-card fc-bl">
+                    <div class="feat-ic fi-bl">👥</div>
+                    <h3 class="feat-title">Role-Based Access Control</h3>
+                    <p class="feat-desc">Create multiple user accounts with different permission levels. Admin, Cashier,
+                        Inventory, or combined roles — you control who sees what.</p>
+                    <ul class="feat-list">
+                        <li>4 built-in permission roles</li>
+                        <li>Add unlimited staff accounts</li>
+                        <li>Role editing without re-login</li>
+                        <li>Auto-sync new users to Firebase</li>
+                    </ul>
+                </div>
+
+                <!-- Database Backup -->
+                <div class="feat-card fc-gn">
+                    <div class="feat-ic fi-gn">💾</div>
+                    <h3 class="feat-title">Database Backup & Restore</h3>
+                    <p class="feat-desc">Export your entire SQLite database as a .sqlite file for local backup. Import
+                        it on any device to instantly restore all your data.</p>
+                    <ul class="feat-list">
+                        <li>One-click SQLite export</li>
+                        <li>Import backup on any device</li>
+                        <li>Includes products, transactions & users</li>
+                        <li>Firebase cloud backup always available</li>
+                    </ul>
+                </div>
+
+                <!-- Settings -->
+                <div class="feat-card fc-pu">
+                    <div class="feat-ic fi-pu">⚙️</div>
+                    <h3 class="feat-title">Full Store Configuration</h3>
+                    <p class="feat-desc">Customize your store name, address, receipt footer, tax rate, and currency.
+                        Everything adapts to your business needs.</p>
+                    <ul class="feat-list">
+                        <li>Store name & address</li>
+                        <li>Configurable tax rate (%)</li>
+                        <li>PHP (₱) and USD ($) currency</li>
+                        <li>Custom receipt footer message</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════════════ -->
+    <section id="how-it-works" class="sec-alt">
+        <div class="container">
+            <span class="sb sb-gn">⚡ Architecture</span>
+            <h2 class="sec-title">How It Works</h2>
+            <p class="sec-sub">A hybrid offline-first architecture that gives you the speed of local storage with the
+                reliability of cloud backup.</p>
+
+            <div class="how-grid">
+                <div class="how-steps">
+                    <div class="how-step">
+                        <div class="how-num">1</div>
+                        <div>
+                            <div class="how-title">Every Action Hits SQLite First</div>
+                            <p class="how-desc">All reads and writes go directly to your local SQLite database. This
+                                makes every operation instant — no waiting for network responses.</p>
+                        </div>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-num">2</div>
+                        <div>
+                            <div class="how-title">Background Sync to Firebase</div>
+                            <p class="how-desc">When you're online, changes are automatically pushed to Firebase
+                                Firestore in the background. You never wait for it — it just happens.</p>
+                        </div>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-num">3</div>
+                        <div>
+                            <div class="how-title">New Device? Auto-Pull Data</div>
+                            <p class="how-desc">Log in on a new device and the app detects an empty local database. It
+                                automatically pulls all your data from Firebase — products, transactions, settings,
+                                users.</p>
+                        </div>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-num">4</div>
+                        <div>
+                            <div class="how-title">Works Offline, Always</div>
+                            <p class="how-desc">Lost internet? No problem. The app continues working 100% normally using
+                                local SQLite. When you reconnect, pending changes sync automatically.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-visual">
+                    <div
+                        style="font-size:12px;font-weight:700;color:rgba(240,240,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px">
+                        Data Flow Diagram</div>
+
+                    <div class="sync-node">
+                        <div class="sync-ic"
+                            style="background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.25)">🖥️</div>
+                        <div>
+                            <div class="sync-title">Your Device (Browser)</div>
+                            <div class="sync-desc">React app running locally</div>
+                        </div>
+                    </div>
+
+                    <div class="sync-arrow">
+                        <div class="sync-line"></div>
+                        <span>reads &amp; writes instantly</span>
+                        <div class="sync-line"></div>
+                    </div>
+
+                    <div class="sync-node">
+                        <div class="sync-ic"
+                            style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.22)">💾</div>
+                        <div>
+                            <div class="sync-title">SQLite (sql.js)</div>
+                            <div class="sync-desc">Local database in browser storage — instant, offline-capable</div>
+                        </div>
+                    </div>
+
+                    <div class="sync-arrow">
+                        <div class="sync-line"></div>
+                        <span>background sync when online</span>
+                        <div class="sync-line"></div>
+                    </div>
+
+                    <div class="sync-node">
+                        <div class="sync-ic"
+                            style="background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.22)">🔥</div>
+                        <div>
+                            <div class="sync-title">Firebase Firestore</div>
+                            <div class="sync-desc">Cloud backup &amp; multi-device sync layer</div>
+                        </div>
+                    </div>
+
+                    <div class="sync-arrow">
+                        <div class="sync-line"></div>
+                        <span>pull on new device login</span>
+                        <div class="sync-line"></div>
+                    </div>
+
+                    <div class="sync-node">
+                        <div class="sync-ic"
+                            style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.22)">📱</div>
+                        <div>
+                            <div class="sync-title">Any Other Device</div>
+                            <div class="sync-desc">Tablet, phone, second POS terminal</div>
+                        </div>
+                    </div>
+
+                    <div class="online-pill">
+                        <span class="online-dot"></span>
+                        Online — Firebase sync active
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     CASHIER SHOWCASE
+═══════════════════════════════════════════════════════════ -->
+    <section id="cashier">
+        <div class="container">
+            <span class="sb sb-am">💳 Cashier</span>
+            <h2 class="sec-title">Lightning-Fast Checkout</h2>
+            <p class="sec-sub">The cashier screen is designed for speed. Tap products, manage the cart, choose payment,
+                and complete the sale in seconds.</p>
+
+            <div class="cashier-grid">
+                <div class="cashier-feats">
+
+                    <div class="cashier-feat">
+                        <div class="cf-ic"
+                            style="background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.25)">🔍</div>
+                        <div>
+                            <div class="cf-title">Instant Product Search</div>
+                            <p class="cf-desc">Search products by name in real-time. Filter by category with one tap.
+                                Find any product in under a second.</p>
+                        </div>
+                    </div>
+
+                    <div class="cashier-feat">
+                        <div class="cf-ic" style="background:rgba(16,217,138,.1);border:1px solid rgba(16,217,138,.22)">
+                            🛒</div>
+                        <div>
+                            <div class="cf-title">Smart Cart Management</div>
+                            <p class="cf-desc">Add items with a single tap. Adjust quantities with + / − buttons. Remove
+                                items instantly. Visual feedback on every action.</p>
+                        </div>
+                    </div>
+
+                    <div class="cashier-feat">
+                        <div class="cf-ic" style="background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.22)">
+                            💵</div>
+                        <div>
+                            <div class="cf-title">Bill Denomination Buttons</div>
+                            <p class="cf-desc">Tap ₱20, ₱50, ₱100, ₱500 buttons to quickly add cash amounts. Change is
+                                calculated automatically in real-time.</p>
+                        </div>
+                    </div>
+
+                    <div class="cashier-feat">
+                        <div class="cf-ic"
+                            style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.22)">🖨️</div>
+                        <div>
+                            <div class="cf-title">Printable Receipts</div>
+                            <p class="cf-desc">Every completed transaction generates a printable receipt with itemized
+                                list, tax breakdown, payment method, and change.</p>
+                        </div>
+                    </div>
+
+                    <div class="cashier-feat">
+                        <div class="cf-ic" style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.22)">
+                            📊</div>
+                        <div>
+                            <div class="cf-title">Tax Calculation</div>
+                            <p class="cf-desc">Configurable tax rate applied automatically. Shows subtotal, tax amount,
+                                and final total clearly before checkout.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Cashier Mockup -->
+                <div class="cashier-mock">
+                    <div class="cm-header">
+                        <span class="cm-title">💳 Cashier</span>
+                        <span class="cm-badge">3 items in cart</span>
+                    </div>
+                    <div class="cm-body">
+                        <div
+                            style="font-size:9px;color:rgba(240,240,255,.28);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">
+                            Products — All Categories</div>
+                        <div class="prod-grid">
+                            <div class="prod-tile">
+                                <div class="pt-em">🍔</div>
+                                <div class="pt-nm">Burger Meal</div>
+                                <div class="pt-pr">₱150.00</div>
+                            </div>
+                            <div class="prod-tile"
+                                style="border-color:rgba(79,142,247,.3);background:rgba(79,142,247,.08)">
+                                <div class="pt-em">🧋</div>
+                                <div class="pt-nm">Milk Tea</div>
+                                <div class="pt-pr">₱90.00</div>
+                            </div>
+                            <div class="prod-tile">
+                                <div class="pt-em">🍟</div>
+                                <div class="pt-nm">Fries</div>
+                                <div class="pt-pr">₱60.00</div>
+                            </div>
+                            <div class="prod-tile">
+                                <div class="pt-em">🥤</div>
+                                <div class="pt-nm">Juice</div>
+                                <div class="pt-pr">₱45.00</div>
+                            </div>
+                            <div class="prod-tile">
+                                <div class="pt-em">🍱</div>
+                                <div class="pt-nm">Rice Meal</div>
+                                <div class="pt-pr">₱120.00</div>
+                            </div>
+                            <div class="prod-tile">
+                                <div class="pt-em">☕</div>
+                                <div class="pt-nm">Coffee</div>
+                                <div class="pt-pr">₱75.00</div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="font-size:9px;color:rgba(240,240,255,.28);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">
+                            Cart</div>
+                        <div class="cart-item">
+                            <span class="ci-nm">Burger Meal</span>
+                            <span class="ci-qty">×2</span>
+                            <span class="ci-pr" style="color:#f0f0ff">₱300.00</span>
+                        </div>
+                        <div class="cart-item">
+                            <span class="ci-nm">Milk Tea</span>
+                            <span class="ci-qty">×1</span>
+                            <span class="ci-pr" style="color:#f0f0ff">₱90.00</span>
+                        </div>
+                        <div class="cart-item">
+                            <span class="ci-nm">Fries</span>
+                            <span class="ci-qty">×1</span>
+                            <span class="ci-pr" style="color:#f0f0ff">₱60.00</span>
+                        </div>
+
+                        <div class="cart-total">
+                            <span class="ct-lbl">Total</span>
+                            <span class="ct-val">₱450.00</span>
+                        </div>
+
+                        <div class="pay-methods">
+                            <div class="pm on">💵 Cash</div>
+                            <div class="pm">📱 GCash</div>
+                            <div class="pm">💳 Card</div>
+                        </div>
+
+                        <div
+                            style="margin-top:10px;padding:10px;background:rgba(16,217,138,.08);border:1px solid rgba(16,217,138,.2);border-radius:8px;font-size:11px;color:#6ee7b7;font-weight:600">
+                            ✓ Change: ₱50.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     USER ROLES
+═══════════════════════════════════════════════════════════ -->
+    <section id="roles" class="sec-alt">
+        <div class="container tc">
+            <span class="sb sb-pu">👥 Access Control</span>
+            <h2 class="sec-title">Role-Based Permissions</h2>
+            <p class="sec-sub">Give each team member exactly the access they need — no more, no less. Four built-in
+                roles cover every use case.</p>
+
+            <div class="roles-grid">
+
+                <div class="role-card rc-admin">
+                    <div class="role-icon">👑</div>
+                    <div class="role-name rn-admin">Admin</div>
+                    <p class="role-desc">Full access to everything in the system</p>
+                    <ul class="role-perms rp-admin">
+                        <li>Dashboard & Analytics</li>
+                        <li>Cashier & Transactions</li>
+                        <li>Product Management</li>
+                        <li>Settings & User Management</li>
+                        <li>Firebase Sync Controls</li>
+                        <li>Database Backup & Restore</li>
+                    </ul>
+                </div>
+
+                <div class="role-card rc-cashier">
+                    <div class="role-icon">💳</div>
+                    <div class="role-name rn-cashier">Cashier</div>
+                    <p class="role-desc">Cashier operations and transaction history</p>
+                    <ul class="role-perms rp-cashier">
+                        <li>Dashboard (read-only)</li>
+                        <li>Cashier — process sales</li>
+                        <li>View transaction history</li>
+                        <li>Print receipts</li>
+                    </ul>
+                </div>
+
+                <div class="role-card rc-inventory">
+                    <div class="role-icon">📦</div>
+                    <div class="role-name rn-inventory">Inventory</div>
+                    <p class="role-desc">Product and stock management only</p>
+                    <ul class="role-perms rp-inventory">
+                        <li>Dashboard (read-only)</li>
+                        <li>Add &amp; edit products</li>
+                        <li>Manage stock levels</li>
+                        <li>Category management</li>
+                    </ul>
+                </div>
+
+                <div class="role-card rc-both">
+                    <div class="role-icon">⚡</div>
+                    <div class="role-name rn-both">Cashier + Inventory</div>
+                    <p class="role-desc">Combined cashier and inventory access</p>
+                    <ul class="role-perms rp-both">
+                        <li>Dashboard (read-only)</li>
+                        <li>Full cashier operations</li>
+                        <li>Full product management</li>
+                        <li>Transaction history</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     COMPARISON TABLE
+═══════════════════════════════════════════════════════════ -->
+    <section>
+        <div class="container tc">
+            <span class="sb sb-cy">🏆 Why cronzph POS</span>
+            <h2 class="sec-title">cronzph POS vs. The Competition</h2>
+            <p class="sec-sub">See why businesses choose cronzph POS over traditional cloud-only POS systems that fail when
+                internet goes down.</p>
+
+            <div class="comp-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="hl">cronzph POS ✦</th>
+                            <th>Cloud-Only POS</th>
+                            <th>Basic POS App</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Works without internet</td>
+                            <td class="hl"><span class="chk">✓</span> Always</td>
+                            <td><span class="crs">✗</span></td>
+                            <td><span class="partial">Partial</span></td>
+                        </tr>
+                        <tr>
+                            <td>Instant local reads</td>
+                            <td class="hl"><span class="chk">✓</span> Sub-ms</td>
+                            <td><span class="crs">✗</span> Network delay</td>
+                            <td><span class="chk">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cloud backup &amp; sync</td>
+                            <td class="hl"><span class="chk">✓</span> Firebase</td>
+                            <td><span class="chk">✓</span></td>
+                            <td><span class="crs">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Multi-device support</td>
+                            <td class="hl"><span class="chk">✓</span> Unlimited</td>
+                            <td><span class="chk">✓</span></td>
+                            <td><span class="crs">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Role-based access control</td>
+                            <td class="hl"><span class="chk">✓</span> 4 roles</td>
+                            <td><span class="partial">Paid plan</span></td>
+                            <td><span class="crs">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Printable receipts</td>
+                            <td class="hl"><span class="chk">✓</span> Built-in</td>
+                            <td><span class="chk">✓</span></td>
+                            <td><span class="partial">Basic</span></td>
+                        </tr>
+                        <tr>
+                            <td>Tax rate configuration</td>
+                            <td class="hl"><span class="chk">✓</span> Flexible</td>
+                            <td><span class="chk">✓</span></td>
+                            <td><span class="partial">Fixed only</span></td>
+                        </tr>
+                        <tr>
+                            <td>Database export / backup</td>
+                            <td class="hl"><span class="chk">✓</span> SQLite file</td>
+                            <td><span class="partial">CSV only</span></td>
+                            <td><span class="crs">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Multiple payment methods</td>
+                            <td class="hl"><span class="chk">✓</span> Cash/GCash/Card</td>
+                            <td><span class="chk">✓</span></td>
+                            <td><span class="partial">Cash only</span></td>
+                        </tr>
+                        <tr>
+                            <td>Low stock alerts</td>
+                            <td class="hl"><span class="chk">✓</span> Real-time</td>
+                            <td><span class="chk">✓</span></td>
+                            <td><span class="crs">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>One-time purchase</td>
+                            <td class="hl"><span class="chk">✓</span> Own it forever</td>
+                            <td><span class="crs">✗</span> Monthly fee</td>
+                            <td><span class="partial">Limited</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TESTIMONIALS -->
+    <section class="sec-alt">
+        <div class="container tc">
+            <span class="sb sb-pk">💬 Testimonials</span>
+            <h2 class="sec-title">Trusted by Real Businesses</h2>
+            <p class="sec-sub">Business owners who switched to cronzph POS never look back. Here's what they say.</p>
+
+            <div class="test-grid">
+                <div class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p class="test-quote">"Our internet goes down almost every afternoon. With cronzph POS, we don't even
+                        notice — the system just keeps running. We've never missed a sale since switching."</p>
+                    <div class="test-author">
+                        <div class="test-avatar" style="background:rgba(79,142,247,.2);color:#7ab0ff">M</div>
+                        <div>
+                            <div class="test-name">Maria Santos</div>
+                            <div class="test-role">Owner, Café Mariposa · Quezon City</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p class="test-quote">"I have 3 terminals running cronzph POS. When I update a product price on one, I
+                        just push to Firebase and pull on the others. It's so simple and it just works."</p>
+                    <div class="test-author">
+                        <div class="test-avatar" style="background:rgba(16,217,138,.15);color:#6ee7b7">R</div>
+                        <div>
+                            <div class="test-name">Ramon Cruz</div>
+                            <div class="test-role">Manager, FoodHub Express · Cebu</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p class="test-quote">"The cashier screen is incredibly fast. My staff learned it in 10 minutes. The
+                        bill denomination buttons are genius — calculating change is instant now."</p>
+                    <div class="test-author">
+                        <div class="test-avatar" style="background:rgba(167,139,250,.15);color:#a78bfa">A</div>
+                        <div>
+                            <div class="test-name">Ana Reyes</div>
+                            <div class="test-role">Owner, Sweet Bites Bakery · Davao</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TECH STACK -->
+    <section>
+        <div class="container tc">
+            <span class="sb sb-bl">🛠️ Technology</span>
+            <h2 class="sec-title">Built on Modern, Proven Tech</h2>
+            <p class="sec-sub">cronzph POS is built with the best tools available — fast, reliable, and battle-tested in
+                production.</p>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-ic">⚛️</div>
+                    <div class="tech-name">React 18</div>
+                    <div class="tech-desc">Fast UI with hooks & concurrent rendering</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-ic">⚡</div>
+                    <div class="tech-name">Vite 5</div>
+                    <div class="tech-desc">Lightning-fast dev & optimized builds</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-ic">💾</div>
+                    <div class="tech-name">sql.js</div>
+                    <div class="tech-desc">SQLite compiled to WebAssembly</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-ic">🔥</div>
+                    <div class="tech-name">Firebase 10</div>
+                    <div class="tech-desc">Firestore cloud sync & Auth</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-ic">🎨</div>
+                    <div class="tech-name">Tailwind CSS</div>
+                    <div class="tech-desc">Utility-first responsive styling</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-ic">▲</div>
+                    <div class="tech-name">Vercel Ready</div>
+                    <div class="tech-desc">One-click deploy with free hosting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PRICING -->
+    <section id="pricing" class="sec-alt">
+        <div class="container tc">
+            <span class="sb sb-gn">💰 Pricing</span>
+            <h2 class="sec-title">Simple, Transparent Pricing</h2>
+            <p class="sec-sub">One-time setup fee. Optional monthly maintenance. Pay for upgrades only when you need
+                them.</p>
+
+            <div class="pricing-grid">
+
+                <div class="price-card featured">
+                    <div class="price-popular">⭐ Get Started</div>
+                    <div class="price-name">System Setup</div>
+                    <div class="price-amount"><sup>₱</sup>3,500</div>
+                    <div class="price-period">One-time · Full deployment included</div>
+                    <ul class="price-features">
+                        <li class="yes">Complete POS system setup</li>
+                        <li class="yes">Offline-first SQLite database</li>
+                        <li class="yes">Firebase cloud sync configured</li>
+                        <li class="yes">Multi-device support</li>
+                        <li class="yes">Role-based user accounts</li>
+                        <li class="yes">Products &amp; inventory setup</li>
+                        <li class="yes">Deployed to your domain</li>
+                        <li class="yes">Initial training &amp; walkthrough</li>
+                    </ul>
+                    <a href="https://www.facebook.com/cronzph" target="_blank" class="btn-p"
+                        style="width:100%;justify-content:center">💬 Avail Now</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-name">Monthly Maintenance</div>
+                    <div class="price-amount"><sup>₱</sup>1,500</div>
+                    <div class="price-period">Per month · Optional add-on</div>
+                    <ul class="price-features">
+                        <li class="yes">System monitoring &amp; upkeep</li>
+                        <li class="yes">Bug fixes &amp; patches</li>
+                        <li class="yes">Firebase sync health checks</li>
+                        <li class="yes">Performance optimization</li>
+                        <li class="yes">Priority support response</li>
+                        <li class="yes">Data backup verification</li>
+                        <li class="no">Feature upgrades (separate)</li>
+                    </ul>
+                    <a href="https://www.facebook.com/cronzph" target="_blank" class="btn-s"
+                        style="width:100%;justify-content:center">💬 Add Maintenance</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-name">Upgrades</div>
+                    <div class="price-amount"><sup>₱</sup>500<span
+                            style="font-size:18px;font-weight:600;color:rgba(240,240,255,.4)">+</span></div>
+                    <div class="price-period">Per upgrade · As needed</div>
+                    <ul class="price-features">
+                        <li class="yes" style="color:#fcd34d;font-weight:700">Minor Upgrade — ₱500</li>
+                        <li class="yes">UI tweaks &amp; small changes</li>
+                        <li class="yes">New product categories</li>
+                        <li class="yes">Settings adjustments</li>
+                        <li class="yes" style="color:#7ab0ff;font-weight:700;margin-top:4px">Major Upgrade — ₱2,000</li>
+                        <li class="yes">New feature modules</li>
+                        <li class="yes">Custom integrations</li>
+                        <li class="yes">Advanced reporting</li>
+                    </ul>
+                    <a href="https://www.facebook.com/cronzph" target="_blank" class="btn-s"
+                        style="width:100%;justify-content:center">💬 Request Upgrade</a>
+                </div>
+
+            </div>
+
+            <p style="margin-top:32px;font-size:14px;color:rgba(240,240,255,.3)">
+                💡 All prices are in Philippine Peso (₱). Message us on Facebook to get started or ask for a custom
+                quote.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <section id="cta" class="cta-section">
+        <div class="cta-box">
+            <span class="sb sb-gn" style="margin-bottom:20px">🚀 Get Started</span>
+            <h2 class="cta-title">Ready to Run Your Business<br><span class="accent">Without Limits?</span></h2>
+            <p class="cta-sub">Deploy cronzph POS in minutes. Works offline from day one. No monthly fees. No internet
+                dependency. Just a fast, reliable POS that works the way your business does.</p>
+            <div class="cta-actions">
+                <a href="https://www.facebook.com/cronzph" target="_blank" class="btn-p">💬 Avail Now on Facebook</a>
+                <a href="#features" class="btn-s">✨ Explore Features</a>
+            </div>
+            <p class="cta-note">✓ Setup starts at ₱3,500 &nbsp;·&nbsp; ✓ No hidden fees &nbsp;·&nbsp; ✓ Works offline
+                immediately &nbsp;·&nbsp; ✓ Message us on Facebook</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-ic">🛒</div>
+                        <span class="footer-logo-name">cronzph <span>POS</span></span>
+                    </div>
+                    <p class="footer-tagline">The offline-first Point of Sale system built for real businesses. SQLite +
+                        Firebase hybrid architecture.</p>
+                    <div class="footer-tech-badges">
+                        <span class="tech-badge">React 18</span>
+                        <span class="tech-badge">Vite 5</span>
+                        <span class="tech-badge">sql.js</span>
+                        <span class="tech-badge">Firebase 10</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">v2.0.0</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#features">Offline Mode</a></li>
+                        <li><a href="#features">Firebase Sync</a></li>
+                        <li><a href="#cashier">Cashier</a></li>
+                        <li><a href="#features">Inventory</a></li>
+                        <li><a href="#features">Analytics</a></li>
+                        <li><a href="#features">Backup</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>System</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#roles">User Roles</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="https://www.facebook.com/cronzph" target="_blank">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/cronzph" target="_blank">💬 Message on Facebook</a></li>
+                        <li><a href="https://www.facebook.com/cronzph" target="_blank">Avail System Setup</a></li>
+                        <li><a href="https://www.facebook.com/cronzph" target="_blank">Request Upgrade</a></li>
+                        <li><a href="https://www.facebook.com/cronzph" target="_blank">Monthly Maintenance</a></li>
+                        <li><a href="https://www.facebook.com/cronzph" target="_blank">Custom Quote</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 <span>cronzph POS</span>. Built with ❤️ for Filipino businesses.</p>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    All systems operational
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
